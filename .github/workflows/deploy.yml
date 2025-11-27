@@ -5,7 +5,7 @@ on:
     inputs:
       name:
         description: "crud-api"
-        default: "dev"
+        default: "prod"
 permissions:
   id-token: write
   contents: read
@@ -24,7 +24,7 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    environment: dev
+    environment: prod
 
     steps:
       - name: Checkout
@@ -44,7 +44,7 @@ jobs:
       - name: Check if Log Group exists
         id: check_log_group
         run: |
-          log_group_name="2ndcareers_api_dev"
+          log_group_name="crud_api_prod"
           existing_log_groups=$(aws logs describe-log-groups --log-group-name-prefix "$log_group_name" --query "logGroups[*].logGroupName" --output text)
           if [[ -z "$existing_log_groups" ]]; then
             echo "Log group does not exist"
@@ -57,11 +57,11 @@ jobs:
       - name: Create log group
         if: steps.check_log_group.outputs.log_group_exists == 'false'
         run: |
-          aws logs create-log-group --log-group-name 2ndcareers_api_dev
+          aws logs create-log-group --log-group-name crud_api_prod
 
       - name: Register task definition
         run: |
-          aws ecs register-task-definition --region us-east-1 --cli-input-json file://2ndcareers-api-task.json
+          aws ecs register-task-definition --region us-east-1 --cli-input-json file://crud-api-task.json
 
       - name: Create an ECS Cluster
         run: |
