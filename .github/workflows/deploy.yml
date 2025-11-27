@@ -70,5 +70,5 @@ jobs:
         run: |
           aws ecs update-service \
             --cluster crud-api \
-            --service <YOUR_SERVICE> \
+            --service crud-api-service \
             --force-new-deployment
