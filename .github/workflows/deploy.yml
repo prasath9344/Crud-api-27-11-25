@@ -72,6 +72,7 @@ jobs:
             --cluster crud-api \
             --service crud-service \
             --force-new-deployment
+            wait-for-service-stability: true
 
       
       
