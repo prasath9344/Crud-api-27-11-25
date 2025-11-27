@@ -1,4 +1,4 @@
-name: Deploy api to AWS ECS Fargate
+name: Deploy crud api to AWS ECS Fargate
 
 on:
   workflow_dispatch:
