@@ -69,6 +69,6 @@ jobs:
       - name: Update ECS service
         run: |
           aws ecs update-service \
-            --cluster crud-api \
-            --service crud-api-service \
-            --force-new-deployment
+          --cluster crud-cluster \
+          --service crud-service \
+          --force-new-deployment
