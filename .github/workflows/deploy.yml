@@ -122,7 +122,7 @@ jobs:
         id: add-env-var
         uses: cvmaker-bv/amazon-ecs-task-environment@v1
         env:
-        PROFESSIONAL_TRIAL_PERIOD: ${{secrets.PROFESSIONAL_TRIAL_PERIOD}}
+          PROFESSIONAL_TRIAL_PERIOD: ${{secrets.PROFESSIONAL_TRIAL_PERIOD}}
           MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
           MYSQL_USER: ${{ secrets.MYSQL_USER }}
           MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
