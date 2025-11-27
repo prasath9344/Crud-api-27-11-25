@@ -1,4 +1,4 @@
-name: Deploy 2ndcareers-dev-api to AWS ECS Fargate
+name: Deploy api to AWS ECS Fargate
 
 on:
   workflow_dispatch:
