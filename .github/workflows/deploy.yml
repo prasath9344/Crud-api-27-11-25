@@ -121,6 +121,7 @@ jobs:
       - name: Add environment variables to ECS task definition
         id: add-env-var
         uses: cvmaker-bv/amazon-ecs-task-environment@v1
+        
         env:
           PROFESSIONAL_TRIAL_PERIOD: ${{secrets.PROFESSIONAL_TRIAL_PERIOD}}
           MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
